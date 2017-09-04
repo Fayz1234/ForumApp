@@ -72,7 +72,7 @@ var LoginPage = (function () {
 }());
 LoginPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"/Users/Fayz/Downloads/ForumApp(final)/src/pages/login/login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n<ion-list no-lines>\n\n  <ion-item>\n    <ion-label floating>Username</ion-label>\n    <ion-input type="text"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Password</ion-label>\n    <ion-input type="password"></ion-input>\n  </ion-item>\n  <ion-item>\n  <button ion-button round full (click) = "goto()">login</button>\n\n</ion-item>\n<ion-item>\n\n<button ion-button round full (click) = "signup()">Sign up</button>\n\n</ion-item>\n\n</ion-list>\n<!-- <ion-list>\n\n  <ion-item>\n    <ion-label fixed>Username</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed>Password</ion-label>\n    <ion-input type="password"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <button ion-button full (click) = "goToHome()">Login</button>\n  </ion-item>\n\n\n\n</ion-list> -->\n<!-- <button ion-button color="dark" outline style="text-align: center;" (click)="register()">Register</button>  -->\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/Fayz/Downloads/ForumApp(final)/src/pages/login/login.html"*/,
+        selector: 'page-login',template:/*ion-inline-start:"/Volumes/Data/FLP Data/Assignment Falak/ForumAppCloned/ForumApp/src/pages/login/login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n<ion-list no-lines>\n\n  <ion-item>\n    <ion-label floating>Username</ion-label>\n    <ion-input type="text"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Password</ion-label>\n    <ion-input type="password"></ion-input>\n  </ion-item>\n  <ion-item>\n  <button ion-button round full (click) = "goto()">login</button>\n\n</ion-item>\n<ion-item>\n\n<button ion-button round full (click) = "signup()">Sign up</button>\n\n</ion-item>\n\n</ion-list>\n<!-- <ion-list>\n\n  <ion-item>\n    <ion-label fixed>Username</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed>Password</ion-label>\n    <ion-input type="password"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <button ion-button full (click) = "goToHome()">Login</button>\n  </ion-item>\n\n\n\n</ion-list> -->\n<!-- <button ion-button color="dark" outline style="text-align: center;" (click)="register()">Register</button>  -->\n\n\n</ion-content>\n'/*ion-inline-end:"/Volumes/Data/FLP Data/Assignment Falak/ForumAppCloned/ForumApp/src/pages/login/login.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
 ], LoginPage);
@@ -111,6 +111,8 @@ var ForumListPage = (function () {
     function ForumListPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        //Hard code Forum List data
+        //id, title, description details are bind in HTML
         this.forumList = [{
                 id: '1',
                 title: 'Announcements ',
@@ -155,9 +157,11 @@ var ForumListPage = (function () {
             },
         ];
     }
+    //Life cycle method
     ForumListPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ForumListPage');
     };
+    //Custom Method to Push Page with Parameters
     ForumListPage.prototype.func = function (x) {
         console.log(x);
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__topic_detail_topic_detail__["a" /* TopicDetailPage */], { "selected_Item": x });
@@ -166,7 +170,7 @@ var ForumListPage = (function () {
 }());
 ForumListPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-forum-list',template:/*ion-inline-start:"/Users/Fayz/Downloads/ForumApp(final)/src/pages/forum-list/forum-list.html"*/'<!--\n  Generated template for the ForumListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>forumList</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n<ion-list>\n  <ion-item *ngFor="let x of forumList" (click)="func(x)">\n    <!-- <ion-avatar item-start>\n      <img src="img/avatar-cher.png">\n    </ion-avatar> -->\n    <h2>{{x.title}}</h2>\n    <p>{{x.shortDescp}}</p>\n  </ion-item>\n</ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/Fayz/Downloads/ForumApp(final)/src/pages/forum-list/forum-list.html"*/,
+        selector: 'page-forum-list',template:/*ion-inline-start:"/Volumes/Data/FLP Data/Assignment Falak/ForumAppCloned/ForumApp/src/pages/forum-list/forum-list.html"*/'<!--\n  Generated template for the ForumListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>forumList</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n<ion-list>\n  <ion-item *ngFor="let x of forumList" (click)="func(x)">\n    <!-- <ion-avatar item-start>\n      <img src="img/avatar-cher.png">\n    </ion-avatar> -->\n    <h2>{{x.title}}</h2>\n    <p>{{x.shortDescp}}</p>\n  </ion-item>\n</ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Volumes/Data/FLP Data/Assignment Falak/ForumAppCloned/ForumApp/src/pages/forum-list/forum-list.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
 ], ForumListPage);
@@ -208,6 +212,7 @@ var TopicDetailPage = (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.loopVar1 = this.navParams.get('selected_Item');
+        //hard oode data for Demo purpose
         this.loopVar = [1, 2, 3, 4, 5, 6, 7, 8];
     }
     TopicDetailPage.prototype.ionViewDidLoad = function () {
@@ -223,7 +228,7 @@ var TopicDetailPage = (function () {
 }());
 TopicDetailPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-topic-detail',template:/*ion-inline-start:"/Users/Fayz/Downloads/ForumApp(final)/src/pages/topic-detail/topic-detail.html"*/'<!--\n  Generated template for the TopicDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>topicDetail</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n<ion-card *ngFor = "let x of loopVar" (click)="listDetails()">\n  <img src="assets/forum.jpg"/>\n  <ion-card-content>\n    <ion-card-title>\n      Nine Inch Nails Live\n      </ion-card-title>\n    <p>\n      The most popular industrial group ever, and largely\n      responsible for bringing the music to a mass audience.\n    </p>\n  </ion-card-content>\n</ion-card>\n<ion-fab right bottom>\n    <button ion-fab (click)="addTopic()"><ion-icon name="add"></ion-icon></button>\n    \n  </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"/Users/Fayz/Downloads/ForumApp(final)/src/pages/topic-detail/topic-detail.html"*/,
+        selector: 'page-topic-detail',template:/*ion-inline-start:"/Volumes/Data/FLP Data/Assignment Falak/ForumAppCloned/ForumApp/src/pages/topic-detail/topic-detail.html"*/'<!--\n  Generated template for the TopicDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>topicDetail</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n<ion-card *ngFor = "let x of loopVar" (click)="listDetails()">\n  <img src="assets/forum.jpg"/>\n  <ion-card-content>\n    <ion-card-title>\n      Nine Inch Nails Live\n      </ion-card-title>\n    <p>\n      The most popular industrial group ever, and largely\n      responsible for bringing the music to a mass audience.\n    </p>\n  </ion-card-content>\n</ion-card>\n<ion-fab right bottom>\n    <button ion-fab (click)="addTopic()"><ion-icon name="add"></ion-icon></button>\n    \n  </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"/Volumes/Data/FLP Data/Assignment Falak/ForumAppCloned/ForumApp/src/pages/topic-detail/topic-detail.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
 ], TopicDetailPage);
@@ -261,7 +266,6 @@ var ForumListDetailsPage = (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.loopVar = this.navParams.get('selected_Item');
-        console.log("nav page", this.loopVar);
     }
     ForumListDetailsPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ForumListDetailsPage');
@@ -270,7 +274,7 @@ var ForumListDetailsPage = (function () {
 }());
 ForumListDetailsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-forum-list-details',template:/*ion-inline-start:"/Users/Fayz/Downloads/ForumApp(final)/src/pages/forum-list-details/forum-list-details.html"*/'<!--\n  Generated template for the ForumListDetailsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>forumListDetails</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n<ion-card>\n  <ion-card-header>\n    Details\n  </ion-card-header>\n  <ion-card-content>\n    {{loopVar.details}}\n  </ion-card-content>\n</ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/Fayz/Downloads/ForumApp(final)/src/pages/forum-list-details/forum-list-details.html"*/,
+        selector: 'page-forum-list-details',template:/*ion-inline-start:"/Volumes/Data/FLP Data/Assignment Falak/ForumAppCloned/ForumApp/src/pages/forum-list-details/forum-list-details.html"*/'<!--\n  Generated template for the ForumListDetailsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>forumListDetails</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n<ion-card>\n  <ion-card-header>\n    Details\n  </ion-card-header>\n  <ion-card-content>\n    {{loopVar.details}}\n  </ion-card-content>\n</ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Volumes/Data/FLP Data/Assignment Falak/ForumAppCloned/ForumApp/src/pages/forum-list-details/forum-list-details.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
 ], ForumListDetailsPage);
@@ -308,9 +312,11 @@ var AddTopicPage = (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
     }
+    //Life Cycle method
     AddTopicPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad AddTopicPage');
     };
+    //Custom Method for Pop Page from navigation
     AddTopicPage.prototype.post = function () {
         this.navCtrl.pop();
     };
@@ -318,7 +324,7 @@ var AddTopicPage = (function () {
 }());
 AddTopicPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-add-topic',template:/*ion-inline-start:"/Users/Fayz/Downloads/ForumApp(final)/src/pages/add-topic/add-topic.html"*/'<!--\n  Generated template for the AddTopicPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>addTopic</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n<ion-card >\n  <img src="assets/forum.jpg"/>\n  <ion-card-content>\n    <ion-card-title>\n      Topic Title\n      </ion-card-title>\n      <ion-input type="text" placeholder="Write topic title">\n    </ion-input>\n  </ion-card-content>\n  </ion-card>\n  <ion-card >\n  <ion-card-content>\n    <ion-card-title>\n      Topic Detail\n      </ion-card-title>\n      <ion-textarea placeholder="please write your words">\n    </ion-textarea>\n  </ion-card-content>\n  </ion-card>\n  <button ion-button round full (click) = "post()">Post</button>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/Fayz/Downloads/ForumApp(final)/src/pages/add-topic/add-topic.html"*/,
+        selector: 'page-add-topic',template:/*ion-inline-start:"/Volumes/Data/FLP Data/Assignment Falak/ForumAppCloned/ForumApp/src/pages/add-topic/add-topic.html"*/'<!--\n  Generated template for the AddTopicPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>addTopic</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n<ion-card >\n  <img src="assets/forum.jpg"/>\n  <ion-card-content>\n    <ion-card-title>\n      Topic Title\n      </ion-card-title>\n      <ion-input type="text" placeholder="Write topic title">\n    </ion-input>\n  </ion-card-content>\n  </ion-card>\n  <ion-card >\n  <ion-card-content>\n    <ion-card-title>\n      Topic Detail\n      </ion-card-title>\n      <ion-textarea placeholder="please write your words">\n    </ion-textarea>\n  </ion-card-content>\n  </ion-card>\n  <button ion-button round full (click) = "post()">Post</button>\n\n\n</ion-content>\n'/*ion-inline-end:"/Volumes/Data/FLP Data/Assignment Falak/ForumAppCloned/ForumApp/src/pages/add-topic/add-topic.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
 ], AddTopicPage);
@@ -366,7 +372,7 @@ var SignupPage = (function () {
 }());
 SignupPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-signup',template:/*ion-inline-start:"/Users/Fayz/Downloads/ForumApp(final)/src/pages/signup/signup.html"*/'<!--\n  Generated template for the SignupPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>signup</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n<ion-list>\n\n  <ion-item>\n    <ion-label floating>Full Name</ion-label>\n    <ion-input type="text"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Email</ion-label>\n    <ion-input type="email"></ion-input>\n  </ion-item>\n\n\n  <ion-item>\n    <ion-label floating>Password</ion-label>\n    <ion-input type="password"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Confirm Password</ion-label>\n    <ion-input type="password"></ion-input>\n  </ion-item>\n\n  <ion-item>\n\n<button ion-button round full (click) = "signup()">Sign up</button>\n\n</ion-item>\n\n\n\n</ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/Fayz/Downloads/ForumApp(final)/src/pages/signup/signup.html"*/,
+        selector: 'page-signup',template:/*ion-inline-start:"/Volumes/Data/FLP Data/Assignment Falak/ForumAppCloned/ForumApp/src/pages/signup/signup.html"*/'<!--\n  Generated template for the SignupPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>signup</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n<ion-list>\n\n  <ion-item>\n    <ion-label floating>Full Name</ion-label>\n    <ion-input type="text"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Email</ion-label>\n    <ion-input type="email"></ion-input>\n  </ion-item>\n\n\n  <ion-item>\n    <ion-label floating>Password</ion-label>\n    <ion-input type="password"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Confirm Password</ion-label>\n    <ion-input type="password"></ion-input>\n  </ion-item>\n\n  <ion-item>\n\n<button ion-button round full (click) = "signup()">Sign up</button>\n\n</ion-item>\n\n\n\n</ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Volumes/Data/FLP Data/Assignment Falak/ForumAppCloned/ForumApp/src/pages/signup/signup.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
 ], SignupPage);
@@ -508,7 +514,7 @@ var MyApp = (function () {
     return MyApp;
 }());
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/Fayz/Downloads/ForumApp(final)/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/Fayz/Downloads/ForumApp(final)/src/app/app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Volumes/Data/FLP Data/Assignment Falak/ForumAppCloned/ForumApp/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Volumes/Data/FLP Data/Assignment Falak/ForumAppCloned/ForumApp/src/app/app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
@@ -543,7 +549,7 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/Users/Fayz/Downloads/ForumApp(final)/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Ionic Blank\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  The world is your oyster.\n  <p>\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.\n  </p>\n</ion-content>\n'/*ion-inline-end:"/Users/Fayz/Downloads/ForumApp(final)/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/Volumes/Data/FLP Data/Assignment Falak/ForumAppCloned/ForumApp/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Ionic Blank\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  The world is your oyster.\n  <p>\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.\n  </p>\n</ion-content>\n'/*ion-inline-end:"/Volumes/Data/FLP Data/Assignment Falak/ForumAppCloned/ForumApp/src/pages/home/home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
 ], HomePage);
