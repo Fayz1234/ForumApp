@@ -19,28 +19,28 @@
 
   <ion-item>
     <ion-label floating>Full Name</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="inputCredentials.name"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating>Email</ion-label>
-    <ion-input type="email"></ion-input>
+    <ion-input type="email" [(ngModel)]="inputCredentials.email"></ion-input>
   </ion-item>
 
 
   <ion-item>
     <ion-label floating>Password</ion-label>
-    <ion-input type="password"></ion-input>
+    <ion-input type="password" [(ngModel)]="inputCredentials.pasword"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating>Confirm Password</ion-label>
-    <ion-input type="password"></ion-input>
+    <ion-input type="password" [(ngModel)]="inputCredentials.confirmPasword"></ion-input>
   </ion-item>
 
   <ion-item>
 
-<button ion-button round full (click) = "signup()">Sign up</button>
+<button ion-button round full (click) = "signUp()">Sign up</button>
 
 </ion-item>
 

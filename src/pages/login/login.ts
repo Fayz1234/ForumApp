@@ -90,7 +90,7 @@ export class LoginPage {
 
     let urlparamterString = "{%22email%22:2}";
     
-    let url = 'http://introtoapps.com/datastore.php?action=load&appid=213442252&objectid=' + this.userInput.email;
+    let url = 'http://introtoapps.com/datastore.php?action=load&appid=213442252&objectid=' + this.inputCredentials.name;
     console.log(url)
     this.http.get(url).subscribe(data => {
       loading.dismiss()
