@@ -20,7 +20,7 @@
     <ion-card-title>
       Topic Title
       </ion-card-title>
-      <ion-input type="text" placeholder="Write topic title">
+      <ion-input type="text" placeholder="Write topic title" [(ngModel)]="topicDetails.title">
     </ion-input>
   </ion-card-content>
   </ion-card>
@@ -29,7 +29,7 @@
     <ion-card-title>
       Topic Detail
       </ion-card-title>
-      <ion-textarea placeholder="please write your words">
+      <ion-textarea placeholder="please write your words" [(ngModel)]="topicDetails.detail">
     </ion-textarea>
   </ion-card-content>
   </ion-card>
