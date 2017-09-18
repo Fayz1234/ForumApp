@@ -14,15 +14,14 @@
 
 
 <ion-content padding>
-<ion-card *ngFor = "let x of loopVar" (click)="listDetails()">
+<ion-card *ngFor = "let x of detailedTopics" (click)="listDetails()">
   <img src="assets/forum.jpg"/>
   <ion-card-content>
     <ion-card-title>
-      Nine Inch Nails Live
+     {{x.title}}
       </ion-card-title>
     <p>
-      The most popular industrial group ever, and largely
-      responsible for bringing the music to a mass audience.
+      {{x.detail}}
     </p>
   </ion-card-content>
 </ion-card>

@@ -6,16 +6,12 @@ Custom Pages
 */ 
 import { ForumListPage } from '../forum-list/forum-list';
 
-//NETWORKING HTTP MODULE IMPORT
+/* PROJECT 2 FEATURES IMPLEMENTATION IMPORTS REQUIRED */
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Storage } from '@ionic/storage';
-
-//ADDITIONAL API
 import { ToastController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
-
-//SECURiTY FEATURE: MD5 PASSWORD ENCRYPTION MODULE
 import {Md5} from 'ts-md5/dist/md5';
 
 
@@ -39,7 +35,7 @@ export class SignupPage {
 
   signUp(){
     
-        let valid = this.validateInput()
+        let valid = this.validateInputData()
         
         if (valid){ this.signUpUser() }    
     
@@ -48,30 +44,33 @@ export class SignupPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
   }
+
+  //Custom MEthods for Networking call and save user
   signUpUser(){
     
-    //PASSWORD MD5 ENCRYPTION
-    let passwordmd5 = Md5.hashStr(this.inputCredentials.pasword).toString()
-    console.log("password md5 is : " + passwordmd5)
-    this.inputCredentials.pasword = passwordmd5
-    this.inputCredentials.confirmPasword = passwordmd5
+    //encrypt password to hide from server
+    let encrypPassword = Md5.hashStr(this.inputCredentials.pasword).toString()
+    this.inputCredentials.pasword = encrypPassword
+    this.inputCredentials.confirmPasword = encrypPassword
 
     console.log('user input:')
     console.log(this.inputCredentials)
 
     let loading = this.loadingCtrl.create({
-      content: 'Creating User, Please Wait...'
+      content: ''
     });
     loading.present();
 
-    let url = 'http://introtoapps.com/datastore.php?action=save&appid=213442252&objectid='+this.inputCredentials.name+'&data=' + this.inputCredentials;
+    let url = 'http://introtoapps.com/datastore.php?action=save&appid=213442252&objectid='+this.inputCredentials.name+'&data=' + JSON.stringify( this.inputCredentials);
     console.log(url)
     this.http.post(url,  this.inputCredentials).subscribe(data => {
           console.log(data);
           loading.dismiss()
           if(data.ok){
-            this.storage.set("user", this.inputCredentials);
-            this.presentToast('User Successfully created.')
+    
+            //local storage of user, to maintain app state
+            this.storage.set("saved_user", this.inputCredentials.name)
+            this.showAlert('User Successfully created.')
             this.navCtrl.setRoot(ForumListPage);
           }
           
@@ -79,43 +78,42 @@ export class SignupPage {
 
   }
 
-  //VALIDATION
-  validateInput(): Boolean{
+  
+  validateInputData(): Boolean{
     
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var email = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     let valid = true
 
     if (this.inputCredentials.name.length < 1) {
       
         valid = false
-        this.presentToast('Enter user name');
+        this.showAlert('Enter user name');
           
-    }else  if(!re.test(this.inputCredentials.email)){
+    }else  if(!email.test(this.inputCredentials.email)){
       
-      this.presentToast('enter valid email.')
+      this.showAlert('enter valid email.')
       valid = false;
     
     }else if (this.inputCredentials.pasword.length < 6) {
       
       valid = false
-      this.presentToast('Enter atleast 6 alphabet password.');
+      this.showAlert('Enter atleast 6 alphabet password.');
     
     }else if(this.inputCredentials.pasword !== this.inputCredentials.confirmPasword){
       
-      this.presentToast('password does not match.')
+      this.showAlert('password does not match.')
       valid = false;
     }
 
     return valid
   }
 
-
-   //ADDITIONAL API, DISTINCTION FEATURE
-   presentToast(withMessage: string) {
+  //Ionic toast plugin cross platform
+   showAlert(message: string) {
     let toast = this.toastCtrl.create({
-      message: withMessage,
-      duration: 3000,
+      message: message,
+      duration: 2000,
       position: 'top'
     });
     toast.present();

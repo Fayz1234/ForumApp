@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ForumListDetailsPage } from '../forum-list-details/forum-list-details';
 import { TopicDetailPage } from '../topic-detail/topic-detail';
+import { LoginPage } from '../login/login';
 
-//ADDITIONAL API
+//required imports for features implementation
 import { ToastController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the ForumListPage page.
@@ -23,13 +25,13 @@ import 'rxjs/add/operator/map';
 export class ForumListPage {
 	forumList: any;
 	//forumslist
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, private toastCtrl: ToastController, public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public storage: Storage, public http: Http, private toastCtrl: ToastController, public loadingCtrl: LoadingController) {
 
-	//id, title, description details are bind in HTML
-	
-    
   }
 
+
+
+  //Network call
   getDataFromServer(){
 
 	let allForumsListObjectId = "forumslist"
@@ -67,6 +69,11 @@ export class ForumListPage {
 	//Get updated data everytime
 	this.getDataFromServer()
 
+  }
+
+  signoutuser(){
+	this.storage.remove('saved_user');
+    this.navCtrl.setRoot(LoginPage);
   }
 
   //Custom Method to Push Page with Parameters
